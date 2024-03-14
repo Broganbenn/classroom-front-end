@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getComplaints, createComplaint } from '../helpers/apiEndpoints';
+import { getComplaints} from '../helpers/apiEndpoints';
 
 const ComplaintList = () => {
     const dummyCompaints = [
