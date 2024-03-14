@@ -83,7 +83,7 @@ const ComplaintList = () => {
         <>
           <div>
           <h1>Complaint Portal</h1>
-          <p>hello</p>
+          
           </div>  
           
          
