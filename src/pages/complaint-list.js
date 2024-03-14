@@ -28,23 +28,23 @@ const ComplaintList = () => {
       }, []) // eslint-disable-line react-hooks/exhaustive-deps
     
     //Create 
-    const handleSubmit = async (event) => {
-      event.preventDefault()
-      const complaint = {
-        message: event.target.message.value,
-        source: "james-front-end",
-        submitter: event.target.submitter.value,
-        type: event.target.type.value,
-      }
-      console.log("complaint", complaint)
-      const { apiEndpoint, apiOptions } = await createComplaint(complaint)
-      console.log("apiEndpoint", apiEndpoint)
-      const response = await fetch(apiEndpoint, apiOptions)
-      console.log("response", response)
-      const data = await response.json()
-      console.log(data)
-      setComplaints([...complaints, data])
-    }
+    // const handleSubmit = async (event) => {
+    //   event.preventDefault()
+    //   const complaint = {
+    //     message: event.target.message.value,
+    //     source: "james-front-end",
+    //     submitter: event.target.submitter.value,
+    //     type: event.target.type.value,
+    //   }
+    //   console.log("complaint", complaint)
+    //   const { apiEndpoint, apiOptions } = await createComplaint(complaint)
+    //   console.log("apiEndpoint", apiEndpoint)
+    //   const response = await fetch(apiEndpoint, apiOptions)
+    //   console.log("response", response)
+    //   const data = await response.json()
+    //   console.log(data)
+    //   setComplaints([...complaints, data])
+    // }
     
     const CoolTable = ({data}) => {
       // const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
