@@ -80,23 +80,20 @@ const ComplaintList = () => {
     
     
       return (
-        <>
-          <div>
-          <h1>Complaint Portal</h1>
-          
-          </div>  
+      
+      
           
          
             
     
             <div>
-              <hr/>
+              
               <h2>Complaints</h2>
               <CoolTable data={complaints} />
               
             </div>
             
-            </>
+          
       )
 }
 
