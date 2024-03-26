@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react';
 import { getComplaints} from '../helpers/apiEndpoints';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import { green } from '@mui/material/colors';
+import { Scale } from '@mui/icons-material';
 
 const ComplaintList = () => {
     const dummyCompaints = [
@@ -53,27 +58,24 @@ const ComplaintList = () => {
     
       return (
         <table>
-                <thead>
-                    <tr>
-                      <th>Message X</th>
-                      <th>Submitter</th>
-                      <th>Source</th>
-                      <th>Type</th>
-                      <th>Date</th>
-                    </tr>
-                  </thead>
-                  <tbody>
+            <tbody>
               {result.map((complaint) => (
-                  <tr key={complaint.id}>
-                    <td>{complaint.message}</td>
-                    <td>{complaint.submitter}</td>
-                    <td>{complaint.source}</td>
-                    <td>{complaint.type}</td>
-                    <td>{complaint.created_at}</td>
-                  </tr>
+                  <Card key={complaint.id} sx={{ maxWidth: 255, color: '#1e2021', marginBlock: "12px", backgroundColor: "#dae0eb", boxShadow: "1px 3px 3px #87898c", border: "1px solid #1e2021", cursor: 'pointer',
+                  '&:hover': {
+                    backgroundColor: '#bec3cc', transform: 'scale(1.05)',
+                  }  }}>
+                    <CardContent>
+                    <Typography variant='h6' component={"div"}>
+                      {complaint.message}
+                    </Typography>
+                    <Typography variant='body2'>
+                      {complaint.submitter}
+                    </Typography>
+                    </CardContent>
+                  </Card>
               ))}
               </tbody>
-            </table>
+          </table>
       )
     }
     
@@ -88,7 +90,7 @@ const ComplaintList = () => {
     
             <div>
               
-              <h2>Complaints</h2>
+              <h1>Complaints</h1>
               <CoolTable data={complaints} />
               
             </div>
