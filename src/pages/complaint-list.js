@@ -60,7 +60,7 @@ const ComplaintList = () => {
         <table>
             <tbody>
               {result.map((complaint) => (
-                  <Card key={complaint.id} sx={{ maxWidth: 255, color: '#1e2021', marginBlock: "12px", backgroundColor: "#dae0eb", boxShadow: "1px 3px 3px #87898c", border: "1px solid #1e2021", cursor: 'pointer',
+                  <Card key={complaint.id} sx={{ maxWidth: 200, color: '#1e2021', marginBlock: "12px", backgroundColor: "#dae0eb", boxShadow: "1px 3px 3px #87898c", border: "1px solid #1e2021", cursor: 'pointer',
                   '&:hover': {
                     backgroundColor: '#bec3cc', transform: 'scale(1.05)',
                   }  }}>
