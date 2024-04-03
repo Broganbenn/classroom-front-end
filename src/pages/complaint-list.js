@@ -59,17 +59,22 @@ const ComplaintList = () => {
         <table>
             <tbody>
               {result.map((complaint) => (
-                  <Card key={complaint.id} sx={{ maxWidth: 200, color: '#1e2021', marginBlock: "12px", backgroundColor: "#dae0eb", boxShadow: "1px 3px 3px #87898c", border: "1px solid #1e2021", cursor: 'pointer',
+                  <Card key={complaint.id} sx={{ width: 1400, color: '#1e2021', marginBlock: "12px", backgroundColor: "#dae0eb", boxShadow: "1px 3px 3px #87898c", border: "1px solid #1e2021", cursor: 'pointer',
                   '&:hover': {
-                    backgroundColor: '#bec3cc', transform: 'scale(1.05)',
+                    backgroundColor: '#bec3cc', transform: 'scale(1.01)',
                   }  }}>
                     <CardContent>
-                    <Typography variant='h6' component={"div"}>
-                      {complaint.message}
-                    </Typography>
-                    <Typography variant='body2'>
-                      {complaint.submitter}
-                    </Typography>
+                    <Typography variant='h6' component={"div"} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+  <span>{complaint.message}</span>
+  <span>{complaint.submitter}</span>
+  <span>{complaint.source}</span>
+  <span>{complaint.record_type}</span>
+  <span>{complaint.date}</span>
+  <span>{complaint.email}</span>
+  <span>{complaint.phone}</span>
+
+</Typography>
+
                     </CardContent>
                   </Card>
               ))}
