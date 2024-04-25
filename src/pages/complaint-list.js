@@ -3,6 +3,7 @@ import { getComplaints} from '../helpers/apiEndpoints';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { Box } from '@mui/material';
 
 
 const ComplaintList = () => {
@@ -63,17 +64,25 @@ const ComplaintList = () => {
                   '&:hover': {
                     backgroundColor: '#bec3cc', transform: 'scale(1.01)',
                   }  }}>
-                    <CardContent>
-                    <Typography variant='h6' component={"div"} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-  <span>{complaint.message}</span>
-  <span>{complaint.submitter}</span>
-  <span>{complaint.source}</span>
-  <span>{complaint.record_type}</span>
-  <span>{complaint.date}</span>
-  <span>{complaint.email}</span>
-  <span>{complaint.phone}</span>
+                    <CardContent sx={{flex: "1.0 auto"}}>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', textAlign: 'left', flexDirection: 'row', flexGrow: 1, }}>
+                    <Typography variant='h6' component={"div"} sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row', flexGrow: 1, }}>
+  <Typography sx={{textAlign: 'left'}} >{complaint.message}</Typography>
+  <Typography>{complaint.submitter}</Typography>
+  <div className='wall'></div>
+  <Typography>{complaint.source}</Typography>
+  </Typography>
+  </Box>
+  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left', flexDirection: 'row', flexGrow: 1, }}>
+  <Typography>{complaint.type}</Typography>
+  <div className='wall'></div>
+  <Typography >{new Date(complaint.created_at).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })}</Typography>
+  <div className='wall'></div>
+  <Typography >{complaint.email}</Typography>
+  <div className='wall'></div>
+  <Typography>{complaint.phone}</Typography>
+  </Box>
 
-</Typography>
 
                     </CardContent>
                   </Card>
