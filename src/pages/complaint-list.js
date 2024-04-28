@@ -62,35 +62,35 @@ const ComplaintList = () => {
   const StatusIcon = ({ status }) => {
     switch (status) {
       case "fire":
-       return <WhatshotIcon sx={{ color: red[800] }} /> 
+        return <WhatshotIcon sx={{ color: red[800] }} />
         break;
       case "trash":
-        return <DeleteIcon sx={{ color: grey[800] }}/>
-          break;
+        return <DeleteIcon sx={{ color: grey[800] }} />
+        break;
       case "noise":
-        return <VolumeUpIcon sx={{ color: purple[800] }}/>
-          break;
+        return <VolumeUpIcon sx={{ color: purple[800] }} />
+        break;
       case "parking":
-        return <LocalParkingIcon sx={{ color: blue[800] }}/>
-          break;
+        return <LocalParkingIcon sx={{ color: blue[800] }} />
+        break;
       case "pet/pet waste":
-        return <PetsIcon/>
-          break;
+        return <PetsIcon />
+        break;
       case "life safety":
-        return <SupportIcon sx={{ color: orange[800] }}/>
-          break;
+        return <SupportIcon sx={{ color: orange[800] }} />
+        break;
       case "night lighting":
-        return <WbIncandescentIcon sx={{ color: green[800] }}/>
-          break;
+        return <WbIncandescentIcon sx={{ color: green[800] }} />
+        break;
       case "hazardous/unsafe conditions":
-        return <WarningAmberIcon sx={{ color: yellow[800] }}/>
-          break;
+        return <WarningAmberIcon sx={{ color: yellow[800] }} />
+        break;
 
 
 
 
       default:
-        return <SentimentVeryDissatisfiedIcon/> 
+        return <SentimentVeryDissatisfiedIcon />
         break;
     }
   }
@@ -112,10 +112,10 @@ const ComplaintList = () => {
             }}>
               <CardContent sx={{ flex: "1.0 auto" }}>
                 <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', flexGrow: 1 }}>
-                    <Typography variant='h5' sx={{ textAlign: 'left', flexBasis: '53%', }} >{complaint.message}</Typography>
-                    <Typography sx={{ flexBasis: '12%', textAlign: 'left' }}>Name: {complaint.name}</Typography>
-                    <Typography sx={{ flexBasis: '15%' }}>{complaint.source}</Typography>
-                    <Typography variant='h5' sx={{ flexBasis: '20%', textAlign: 'right', }}>{complaint.type} <StatusIcon status={complaint.type} /> </Typography>
+                  <Typography variant='h5' sx={{ textAlign: 'left', flexBasis: '53%', }} >{complaint.message}</Typography>
+                  <Typography sx={{ flexBasis: '12%', textAlign: 'left' }}>Name: {complaint.name}</Typography>
+                  <Typography sx={{ flexBasis: '15%' }}>{complaint.source}</Typography>
+                  <Typography variant='h5' sx={{ flexBasis: '20%', textAlign: 'right', }}>{complaint.type} <StatusIcon status={complaint.type} /> </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', flexGrow: 1 }}>
                   <Typography sx={{ flexBasis: '20%' }}>Submit Date: {new Date(complaint.created_at).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })}</Typography>
