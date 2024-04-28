@@ -85,10 +85,6 @@ const ComplaintList = () => {
       case "hazardous/unsafe conditions":
         return <WarningAmberIcon sx={{ color: yellow[800] }} />
         break;
-
-
-
-
       default:
         return <SentimentVeryDissatisfiedIcon />
         break;
