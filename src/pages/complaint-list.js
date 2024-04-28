@@ -63,31 +63,22 @@ const ComplaintList = () => {
     switch (status) {
       case "fire":
         return <WhatshotIcon sx={{ color: red[800] }} />
-        break;
       case "trash":
         return <DeleteIcon sx={{ color: grey[800] }} />
-        break;
       case "noise":
         return <VolumeUpIcon sx={{ color: purple[800] }} />
-        break;
       case "parking":
         return <LocalParkingIcon sx={{ color: blue[800] }} />
-        break;
       case "pet/pet waste":
         return <PetsIcon />
-        break;
       case "life safety":
         return <SupportIcon sx={{ color: orange[800] }} />
-        break;
       case "night lighting":
         return <WbIncandescentIcon sx={{ color: green[800] }} />
-        break;
       case "hazardous/unsafe conditions":
         return <WarningAmberIcon sx={{ color: yellow[800] }} />
-        break;
       default:
         return <SentimentVeryDissatisfiedIcon />
-        break;
     }
   }
 
