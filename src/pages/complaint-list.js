@@ -99,16 +99,19 @@ const ComplaintList = () => {
             }}>
               <CardContent sx={{ flex: "1.0 auto" }}>
                 <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', flexGrow: 1 }}>
-                  <Typography variant='h5' sx={{ textAlign: 'left', flexBasis: '53%', }} >{complaint.message}</Typography>
-                  <Typography sx={{ flexBasis: '12%', textAlign: 'left' }}>Name: {complaint.name}</Typography>
-                  <Typography sx={{ flexBasis: '15%' }}>{complaint.source}</Typography>
-                  <Typography variant='h5' sx={{ flexBasis: '20%', textAlign: 'right', }}>{complaint.type} <StatusIcon status={complaint.type} /> </Typography>
+                  <Typography variant='h5' sx={{ textAlign: 'left', flexBasis: '50%', }} >{complaint.message}</Typography>
+                  <Typography sx={{ flexBasis: '20%', textAlign: 'left' }}>Name: {complaint.name}</Typography>
+                  <Typography sx={{ flexBasis: '10%' }}>{complaint.source}</Typography>
+                  <Typography variant='h5' sx={{ flexBasis: '20%', textAlign: 'right', }}>{typeof complaint.type === 'string' ? complaint.type.charAt(0).toUpperCase() + complaint.type.slice(1).toLowerCase() : complaint.type}
+                    <StatusIcon status={complaint.type} />
+                  </Typography>
+
                 </Box>
                 <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', flexGrow: 1 }}>
-                  <Typography sx={{ flexBasis: '20%' }}>Submit Date: {new Date(complaint.created_at).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })}</Typography>
-                  <Typography sx={{ flexBasis: '20%' }}>Email: {complaint.email}</Typography>
-                  <Typography sx={{ flexBasis: '20%', textAlign: 'left' }}>Phone Number: {complaint.phone}</Typography>
-                  <Typography sx={{ flexBasis: '20%' }}>Address: {complaint.address}</Typography>
+                  <Typography sx={{ flexBasis: '25%' }}>Submit Date: {new Date(complaint.created_at).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: '2-digit' })}</Typography>
+                  <Typography sx={{ flexBasis: '25%' }}>Email: {complaint.email}</Typography>
+                  <Typography sx={{ flexBasis: '25%', textAlign: 'left' }}>Phone Number: {complaint.phone}</Typography>
+                  <Typography sx={{ flexBasis: '25%' }}>Address: {complaint.address}</Typography>
                 </Box>
 
 
