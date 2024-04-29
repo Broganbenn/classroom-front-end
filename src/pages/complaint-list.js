@@ -69,13 +69,13 @@ const ComplaintList = () => {
         return <VolumeUpIcon sx={{ color: purple[800] }} />
       case "parking":
         return <LocalParkingIcon sx={{ color: blue[800] }} />
-      case "pet/pet waste":
+      case "pet":
         return <PetsIcon />
-      case "life safety":
+      case "safety":
         return <SupportIcon sx={{ color: orange[800] }} />
-      case "night lighting":
+      case "night":
         return <WbIncandescentIcon sx={{ color: green[800] }} />
-      case "hazardous/unsafe conditions":
+      case "hazard":
         return <WarningAmberIcon sx={{ color: yellow[800] }} />
       default:
         return <SentimentVeryDissatisfiedIcon />
